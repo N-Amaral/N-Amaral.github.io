@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a61a7698.css",
+    "main.js": "/static/js/main.195d04a3.js",
+    "static/media/bigwave_japan-new1.svg": "/static/media/bigwave_japan-new1.47e9a7d1553075c973cb.svg",
+    "static/media/bigwave_japan-new2.svg": "/static/media/bigwave_japan-new2.dcc3e66d2581af556996.svg",
+    "index.html": "/index.html",
+    "main.a61a7698.css.map": "/static/css/main.a61a7698.css.map",
+    "main.195d04a3.js.map": "/static/js/main.195d04a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a61a7698.css",
+    "static/js/main.195d04a3.js"
+  ]
+}
