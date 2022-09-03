@@ -1,0 +1,93 @@
+/* project cards */
+
+#projects .card {
+  margin-left: 8rem !important;
+  margin-right: 8rem !important;
+  width: 34rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+  background-color: inherit;
+  transition: 0.8s !important;
+}
+
+#projects .card-dark {
+  border: none !important;
+  box-shadow: 10px 10px 5px var(--blue-dark) !important;
+}
+#projects .card-light {
+  border: none !important;
+  box-shadow: 10px 10px 5px var(--yellow-dark) !important;
+}
+
+#projects .card-light .btn-primary {
+  background-color: var(--yellow-dark) !important;
+  border-color: var(--yellow-dark) !important;
+}
+
+#projects .card-light .btn-primary:hover {
+  background-color: var(--yellow-light) !important;
+  border-color: var(--yellow-light) !important;
+}
+
+#projects .card-light .btn-primary:focus,
+#projects .card-light .btn-primary:focus-visible {
+  outline: 0 !important;
+  box-shadow: rgba(191, 169, 91, 0.5) 0px 0px 0px 4px;
+}
+
+#projects .card-dark .btn-primary {
+  background-color: var(--blue-mid) !important;
+  border-color: var(--blue-mid) !important;
+}
+
+#projects .card-dark .btn-primary:hover {
+  background-color: var(--blue-light) !important;
+  border-color: var(--blue-light) !important;
+}
+
+#projects .card-dark .btn-primary:focus,
+#projects .card-dark .btn-primary:focus-visible {
+  outline: 0 !important;
+  box-shadow: rgba(130, 167, 178, 0.5) 0px 0px 0px 4px;
+}
+
+/* projects carrousel */
+
+#projects .carousel,
+#projects #card-empty {
+  left: 20% !important;
+  top: 5% !important;
+}
+
+#projects .carousel > .carousel-inner {
+  width: 50rem;
+}
+
+/* projects empty card */
+.card-light .progress #progress-bar {
+  --bs-progress-bar-bg: var(--yellow-light);
+  --bs-progress-bg: var(--yellow-dark);
+}
+
+.card-dark .progress #progress-bar {
+  --bs-progress-bar-bg: var(--blue-mid);
+  --bs-progress-bg: var(--blue-dark);
+}
+
+/*media queries*/
+@media screen and (max-width: 972px), screen and (orientation: portrait) {
+  #projects #card-empty.card {
+    top: 0 !important;
+    left: 0 !important;
+    width: 34rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transition: 0.8s;
+  }
+}
+@media screen and (max-width: 500px) and (orientation: portrait) {
+  #projects #card-empty.card {
+    max-width: 22rem;
+    transition: 0.8s;
+  }
+}

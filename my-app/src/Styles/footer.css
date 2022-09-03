@@ -1,0 +1,22 @@
+/* footer */
+footer {
+  background-color: inherit;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  transition: 0.5s;
+  transform: scale(1.5);
+  color: whitesmoke;
+}
+
+footer.not-visible {
+  transition: 0.5s;
+}
+
+footer.is-visible {
+  transition: 0.5s;
+}

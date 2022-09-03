@@ -1,0 +1,51 @@
+/* darkMode/lightMode icons */
+.container-icons {
+  --nav-gap: 15px;
+  padding: var(--nav-gap);
+  position: relative;
+  transform: translateY(15%);
+  transition: 0.2s;
+}
+
+.icons {
+  color: inherit;
+  transform: scale(1.8);
+  transition: 0.5s;
+}
+
+.icons:hover {
+  color: whitesmoke;
+  transform: scale(1.5);
+  transition: 0.5s;
+}
+
+.mode-btn {
+  cursor: pointer;
+}
+
+/* animations */
+.loadLight {
+  animation-duration: 0.5s;
+  animation-name: load-light;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: backwards;
+}
+
+@keyframes load-light {
+  0% {
+    color: rgba(0, 0, 0, 0);
+  }
+  25% {
+    color: rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    color: rgba(0, 0, 0, 0.4);
+  }
+  75% {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    color: rgba(0, 0, 0, 1);
+  }
+}

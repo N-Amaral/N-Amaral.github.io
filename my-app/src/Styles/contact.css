@@ -1,0 +1,381 @@
+/* card content*/
+.containerCard {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  top: 3%;
+  left: 20%;
+  justify-content: space-evenly;
+  transition: 0.5s;
+}
+
+.containerCard .contactCard {
+  position: relative;
+}
+
+.containerCard .iconCard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transition: 0.7s;
+  z-index: 1;
+  border-radius: 7px;
+}
+
+.containerCard .contactCard .iconCard {
+  background: var(--yellow-mid);
+  transition: 0.3s;
+}
+
+div.section-dark .containerCard .contactCard .iconCard {
+  background: var(--blue-mid);
+  transition: 0.3s;
+}
+
+/* card icon */
+.containerCard .contactCard .iconCard .bi {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: black;
+}
+
+div.section-dark .containerCard .contactCard .iconCard .bi {
+  color: whitesmoke;
+}
+
+.containerCard i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  transition: 0.7s;
+  color: whitesmoke;
+}
+
+div.section-dark .containerCard i {
+  color: black;
+}
+
+/* card face 1 */
+.containerCard .face {
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px var(--yellow-dark);
+}
+div.section-dark .containerCard .face {
+  box-shadow: 10px 10px 5px var(--blue-dark);
+}
+.containerCard .contactCard .face.face1 {
+  position: relative;
+  background: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+  border-radius: 10px;
+}
+
+.containerCard .contactCard:hover .face.face1 {
+  background: inherit;
+  transform: translateY(0px);
+}
+
+.containerCard .contactCard .face.face1 .contentCard {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.containerCard .contactCard:hover .face.face1 .contentCard {
+  opacity: 1;
+}
+
+.containerCard .contactCard .face.face1 .contentCard i {
+  max-width: 100px;
+}
+
+/* card face 2 */
+.containerCard .contactCard .face.face2 {
+  position: relative;
+  background: var(--yellow-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  transform: translateY(-100px);
+  border-radius: 10px;
+}
+
+div.section-dark .containerCard .contactCard .face.face2 {
+  background: var(--blue-light);
+  box-shadow: 10px 10px 5px var(--blue-dark);
+}
+
+.contactCard:hover .face.face2 {
+  transform: translateY(0);
+}
+
+/* card inner content styles */
+.containerCard .contactCard .face.face2 .contentCard p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: inherit;
+  font-weight: 400;
+}
+
+.containerCard .contactCard .face.face2 .contentCard h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 24px;
+  text-align: center;
+  color: #41414141;
+}
+
+.containerCard a {
+  text-decoration: none;
+  color: #41414141;
+  transition: 0.3s;
+}
+
+/* anchor tag styling */
+.contentCard h3 a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(var(--yellow-mid), var(--yellow-mid)), linear-gradient(var(--yellow-dark), var(--yellow-dark)),
+    linear-gradient(var(--blue-lightest), var(--blue-lightest));
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1.3s linear, background-position 1.3s linear, 1.3s;
+}
+.contentCard h3 a:hover,
+.contentCard h3 a:active {
+  color: var(--blue-mid);
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+  transition: 1.3s;
+}
+
+div.section-dark .contactCard h3 a {
+  color: inherit;
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue-dark), var(--blue-dark)), linear-gradient(var(--blue-lightest), var(--blue-lightest)),
+    linear-gradient(var(--yellow-light), var(--yellow-light));
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1.3s linear, background-position 1.3s linear, 1.3s;
+}
+div.section-dark .contactCard h3 a:hover,
+div.section-dark .contactCard h3 a:active {
+  color: var(--yellow-light);
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+  transition: 1.3s;
+}
+
+/*media queries*/
+@media screen and (max-width: 1560px) {
+  .containerCard {
+    top: 0%;
+    left: 0%;
+    justify-content: space-around;
+    transition: 0.5s;
+    display: flex;
+  }
+  .contactCard {
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 977px) {
+  .containerCard {
+    width: 250px;
+    display: block;
+    justify-content: space-around;
+    transition: 0.5s;
+  }
+  /* card face 1 */
+
+  .containerCard .contactCard .face {
+    width: 250px;
+    height: 150px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .iconCard .bi {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard i {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face1 {
+    transform: translateY(50px);
+    transition: 0.5s;
+  }
+
+  .containerCard .contactCard .face.face2 .contentCard h3 {
+    font-size: 22px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face2 .contentCard p {
+    font-size: 20px;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .containerCard {
+    width: 250px;
+    display: block;
+    justify-content: space-between;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard {
+    margin: 1rem;
+    transition: 0.5s;
+  }
+  /* card face 1 */
+
+  .containerCard .contactCard .face {
+    width: 200px;
+    height: 100px;
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px var(--yellow-dark);
+  }
+  div.section-dark .containerCard .contactCard .face {
+    box-shadow: 10px 10px 5px var(--blue-dark);
+  }
+
+  .containerCard .contactCard .iconCard .bi {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard i {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face1 {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+
+  .containerCard .contactCard .face.face2 .contentCard h3 {
+    font-size: 22px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face2 .contentCard p {
+    font-size: 20px;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 995px), screen and (max-height: 570px) and (max-width: 890px) {
+  .containerCard {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    top: 4%;
+    left: -32%;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard {
+    margin: 1rem;
+    transition: 0.5s;
+  }
+
+  /* card face 1 */
+
+  .containerCard .contactCard .face {
+    width: 200px;
+    height: 100px;
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px var(--yellow-dark);
+  }
+  div.section-dark .containerCard .contactCard .face {
+    box-shadow: 10px 10px 5px var(--blue-dark);
+  }
+  .containerCard .contactCard .iconCard .bi {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard i {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face1 {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+
+  .containerCard .contactCard .face.face2 .contentCard h3 {
+    font-size: 22px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face2 .contentCard p {
+    font-size: 20px;
+    transition: 0.5s;
+  }
+}
+
+@media screen and (max-height <= 500px) {
+  .containerCard {
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    top: 4%;
+    left: 0%;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard {
+    margin: 1rem;
+    transition: 0.5s;
+  }
+
+  /* card face 1 */
+
+  .containerCard .contactCard .face {
+    width: 200px;
+    height: 100px;
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px var(--yellow-dark);
+  }
+  div.section-dark .containerCard .contactCard .face {
+    box-shadow: 10px 10px 5px var(--blue-dark);
+  }
+  .containerCard .contactCard .iconCard .bi {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard i {
+    font-size: 60px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face1 {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+
+  .containerCard .contactCard .face.face2 .contentCard h3 {
+    font-size: 22px;
+    transition: 0.5s;
+  }
+  .containerCard .contactCard .face.face2 .contentCard p {
+    font-size: 20px;
+    transition: 0.5s;
+  }
+}

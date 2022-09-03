@@ -1,0 +1,178 @@
+/* Initial card setup */
+#titleCard0,
+#titleCard1,
+#titleCard2 {
+  opacity: 0;
+}
+
+/* Animation setup for Hero Content */
+#titleCard0 {
+  animation: fadeOut 1 3s ease-in;
+}
+
+#titleCard1 {
+  animation: fadeOut 1 4s ease-in;
+  animation-delay: 3s;
+}
+
+#titleCard2 {
+  animation: finalFade 1 3s ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+  transition: 1.5s;
+}
+
+/* Content styling */
+.titleContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#heroDiv {
+  height: 12rem;
+  width: 35rem;
+}
+
+/* underline for the last hero Card */
+#titleCard2.titleContent span {
+  color: #41414141;
+  text-decoration: none;
+  background-image: linear-gradient(var(--yellow-mid), var(--yellow-mid)), linear-gradient(var(--yellow-dark), var(--yellow-dark)),
+    linear-gradient(var(--blue-lightest), var(--blue-lightest));
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1.3s linear, background-position 1.3s linear, 1.3s;
+}
+#titleCard2.titleContent span:hover,
+#titleCard2.titleContent span:active {
+  color: var(--blue-lightest);
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+  transition: 1.3s;
+}
+
+div.section-dark #titleCard2.titleContent span {
+  color: #41414141;
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue-dark), var(--blue-dark)), linear-gradient(var(--blue-lightest), var(--blue-lightest)),
+    linear-gradient(var(--yellow-light), var(--yellow-light));
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1.3s linear, background-position 1.3s linear, 1.3s;
+}
+div.section-dark #titleCard2.titleContent span:hover,
+div.section-dark #titleCard2.titleContent span:active {
+  color: var(--yellow-light);
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+  transition: 1.3s;
+}
+
+/* Fade animations */
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes finalFade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes colorFadeLight {
+  0% {
+    color: #41414141;
+  }
+  25% {
+    color: var(--blue-dark);
+  }
+  50% {
+    color: var(--blue-mid);
+  }
+  75% {
+    color: var(--blue-lightest);
+  }
+  100% {
+    color: var(--blue-lightest);
+    background-size: 20px 2px, 0 2px, 100% 2px;
+    background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+  }
+}
+@keyframes colorFadeDark {
+  0% {
+    color: #41414141;
+  }
+  25% {
+    color: var(--yellow-dark);
+  }
+  50% {
+    color: var(--yellow-mid);
+  }
+  75% {
+    color: var(--yellow-light);
+  }
+  100% {
+    color: var(--yellow-light);
+    background-size: 20px 2px, 0 2px, 100% 2px;
+    background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+  }
+}
+
+/*media queries*/
+@media screen and (max-width: 500px) and (orientation: portrait) {
+  #heroDiv {
+    min-height: 16rem;
+    width: 21rem;
+  }
+  .titleContent {
+    font-size: 1.2em;
+    width: auto;
+  }
+}
+
+@media (any-hover: none) {
+  .colorFade {
+    animation-name: colorFadeLight;
+    animation-duration: 3s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+  div.section-dark .colorFade {
+    animation-name: colorFadeDark;
+    animation-duration: 3s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+}

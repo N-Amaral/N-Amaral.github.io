@@ -1,0 +1,157 @@
+/* navigation dots */
+.nav-c {
+  --nav-gap: 10px;
+  padding: var(--nav-gap);
+  position: fixed;
+  right: 0;
+  top: 25%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+}
+
+.nav-item-c {
+  align-items: center;
+  display: flex;
+  margin-bottom: var(--nav-gap);
+  flex-direction: row-reverse;
+}
+
+.nav-link-c:hover ~ .nav-label-c {
+  opacity: 1;
+}
+
+.nav-label-c {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: black;
+  text-shadow: 1px 1px #3c3c3cb0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 1.2rem;
+  cursor: default;
+}
+
+body.body-dark .nav-label-c {
+  color: whitesmoke;
+  text-shadow: 1px 1px #3c3c3cb0;
+}
+
+.nav-link-c {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin-left: var(--nav-gap);
+  transition: 0.5s;
+}
+
+.nav-link-c:hover {
+  background: rgba(0, 0, 0, 0.3);
+  transform: scale(1.2);
+  transition: all 0.3s ease-out;
+}
+
+.nav-link-selected {
+  background: #000000;
+  transform: scale(1.4);
+  transition: all 0.5s ease-out;
+}
+
+/* animations */
+
+/* navigation-dots */
+.animateDots {
+  animation-duration: 0.5s;
+  animation-name: animate-dots;
+  animation-delay: 0.2s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-dots {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes gradient-dots {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loadDots-1 {
+  animation-duration: 0.5s;
+  animation-name: load-dots;
+  animation-delay: 0.3s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+.loadDots-2 {
+  animation-duration: 0.6s;
+  animation-name: load-dots;
+  animation-delay: 0.4s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+.loadDots-3 {
+  animation-duration: 0.7s;
+  animation-name: load-dots;
+  animation-delay: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: backwards;
+}
+
+@keyframes load-dots {
+  0% {
+    background: rgba(0, 0, 0, 0);
+  }
+  50% {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/*media queries*/
+@media screen and (max-width: 972px) {
+  .nav-c {
+    top: 20%;
+    transition: 0.5s;
+  }
+  .nav-label-c {
+    font-size: 1rem;
+    color: whitesmoke;
+  }
+}
+
+@media screen and (max-width: 780px) and (max-height: 360px) {
+  .nav-label-c:hover {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .nav-c {
+    top: 55%;
+    transition: 0.5s;
+  }
+  .nav-label-c {
+    font-size: 0.9rem;
+  }
+}

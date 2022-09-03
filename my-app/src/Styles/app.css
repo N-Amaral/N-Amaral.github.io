@@ -1,0 +1,161 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* vars */
+:root {
+  --blue-dark: #171f40;
+  --blue-mid: #29526e;
+  --blue-light: #82a7b2;
+  --blue-lightest: #82c0af;
+  --yellow-dark: #7f745b;
+  --yellow-mid: #bfa95b;
+  --yellow-light: #d4c787;
+}
+
+/* content class */
+
+.content {
+  height: 100vh !important;
+  scroll-snap-type: y mandatory !important;
+  overflow-y: scroll !important;
+  scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* body and body-dark */
+
+body {
+  background-image: url("../../public/bigwave_japan-new1.svg"),
+    linear-gradient(45deg, var(--yellow-dark) 0%, var(--yellow-mid) 35%, var(--yellow-light) 80%, var(--blue-lightest) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.body-dark {
+  background-image: url("../../public/bigwave_japan-new2.svg"),
+    linear-gradient(45deg, var(--blue-dark) 0%, var(--blue-mid) 35%, var(--blue-lightest) 80%, var(--yellow-light) 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* section and section-dark */
+.section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  scroll-snap-align: start;
+  scrollbar-width: none;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #3c3c3cb0;
+  transition: 1s;
+  position: static;
+}
+
+.section-dark {
+  color: whitesmoke;
+  transition: 1s;
+}
+
+.section::-webkit-scrollbar {
+  display: none;
+}
+
+/* opacity */
+.is-visible {
+  opacity: 1;
+  transition: opacity 1s;
+  background-color: inherit;
+}
+
+.not-visible {
+  opacity: 0;
+  transition: opacity 1s;
+  background-color: inherit;
+  cursor: default;
+}
+
+/* baseline card templates */
+
+.card-light {
+  max-width: 50rem;
+  border: none !important;
+  box-shadow: 10px 10px 5px var(--yellow-dark) !important;
+  left: 20%;
+  top: 5%;
+  transition: 0.8s;
+}
+.card-dark {
+  max-width: 50rem;
+  border: none !important;
+  box-shadow: 10px 10px 5px var(--blue-dark) !important;
+  left: 20%;
+  top: 5%;
+  transition: 0.8s;
+}
+
+div.container-modes {
+  display: inline-flex;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  transition: 0.5s;
+}
+
+/* underline effects */
+
+.text-effect {
+  color: #dfe5f3;
+  text-decoration: none;
+  background-image: linear-gradient(var(--blue-dark), var(--blue-dark)), linear-gradient(var(--blue-lightest), var(--blue-lightest)),
+    linear-gradient(var(--yellow-light), var(--yellow-light));
+  background-size: 20px 2px, 100% 2px, 0 2px;
+  background-position: calc(20px * -1) 100%, 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 1.5s linear, background-position 1.5s linear;
+}
+
+.text-effect:hover {
+  background-size: 20px 2px, 0 2px, 100% 2px;
+  background-position: calc(100% + 20px) 100%, 100% 100%, 0 100%;
+}
+
+/*media queries*/
+@media screen and (max-width: 1720px) {
+  .section {
+    color: white;
+    text-shadow: 1px 1px #414141;
+    transition: 1s;
+  }
+}
+@media screen and (max-width: 972px), screen and (max-width: 972px) and (orientation: portrait) {
+  .card-light,
+  .card-dark {
+    left: 0% !important;
+    top: 0% !important;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  div.container-modes {
+    display: inline-flex;
+    position: absolute;
+    right: 4%;
+    transition: 0.5s;
+  }
+}
